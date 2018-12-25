@@ -1,5 +1,8 @@
 class GitHub {
 
+    const url = http.getUser('https://api.github.com/user/');
+
+
     get(url) {
         return new Promise((resolve, reject) => {
             fetch(url)
@@ -7,9 +10,9 @@ class GitHub {
         });
     }
 
-   async getUser(url) {
+   async getUser(url, username) {
 
-    const datafetch = await fetch(url);
+    const datafetch = await fetch(url +username);
 
     const res = await datafetch.json();
 
